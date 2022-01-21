@@ -4,7 +4,7 @@ $footer-text-color: rgba(#fff, 0.7) !default;
 $footer-link-color: $footer-text-color !default;
 $footer-item-disc-color: $primary !default;
 $footer-social-icon-color: $footer-text-color !default;
-$footer-logo-height: 28px !default;
+$footer-logo-height: 30px !default;
 $footer-logo-width: auto !default;
 
 .footer {
@@ -15,6 +15,7 @@ $footer-logo-width: auto !default;
   margin: 0;
   padding: 40px 0;
   position: relative;
+  background-image: url("/images/abstract-shapes-20.svg");
 
   @media (max-width: $breakpoint-md) {
     width: 100%;

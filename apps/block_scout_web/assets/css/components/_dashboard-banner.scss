@@ -8,13 +8,19 @@ $dashboard-line-color-price: lighten($dashboard-banner-gradient-end, 5%) !defaul
 $dashboard-line-color-market: $secondary !default;
 $dashboard-line-color-transactions: $warning !default;
 $dashboard-stats-item-label-color: #fff !default;
-$dashboard-stats-item-value-color: rgba(#fff, 0.8) !default;
+$dashboard-stats-item-value-color: #4a4f55 default;
 $dashboard-banner-chart-legend-label-color: #fff !default;
 $dashboard-banner-chart-legend-value-color: $dashboard-stats-item-value-color !default;
 $dashboard-stats-item-border-color: $primary !default;
 $dashboard-banner-network-plain-container-height: 205px;
 $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !default;
 $dashboard-banner-chart-axis-font-color-alt: #333;
+
+select{
+  &:focus{
+    outline: none
+  }
+}
 
 .dashboard-banner-container {
   @include gradient-container();
@@ -23,6 +29,7 @@ $dashboard-banner-chart-axis-font-color-alt: #333;
   padding: 0;
   position: relative;
   height: 264px;
+  background-image: url("/images/abstract-shapes-20.svg");
   @include media-breakpoint-down(sm) {
       height: auto;
   }
@@ -169,6 +176,47 @@ $dashboard-banner-chart-axis-font-color-alt: #333;
   }
 }
 
+// 移动的内容
+.media{
+  display: flex;
+}
+.media-body{
+  flex: 1;
+}
+.u-sm-avatar {
+  height: 1.75rem;
+  width: 1.75rem;
+}
+.text-size-1{
+  font-size: .9375rem;
+}
+.hr-space-lg{
+  margin: 20px 0!important;
+}
+.font-size-1{
+  font-size: .76563rem!important;
+}
+.u-ver-divider--left{
+  border-left: 1px solid #e7eaf3;
+}
+.space-top-2{
+  padding-top: 3.25rem!important;
+}
+.space-bottom-3{
+  padding-bottom: 4.5rem!important;
+}
+.custom-select{
+  background-color: #fff;
+}
+.h4{
+  font-size: 1.3125rem;
+}
+.mv-top{
+  margin-top: -6rem;
+}
+
+
+
 .dashboard-banner-network-plain-container {
   align-items: center;
   align-self: flex-end;
@@ -213,7 +261,7 @@ $dashboard-banner-chart-axis-font-color-alt: #333;
     position: absolute;
     width: 9999px;
     z-index: -1;
-    box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.2);
+    // box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.2);
     border-top-left-radius: 10px;
 
     @include media-breakpoint-down(md) {

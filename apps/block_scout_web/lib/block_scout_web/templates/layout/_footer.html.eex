@@ -19,21 +19,23 @@
 
     <div class="row">
       <div class="col-xs-12 col-lg-3">
-        <p class="footer-info-text"><%= gettext("Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.") %></p>
+        <p class="footer-info-text"><%= gettext("HSChain is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.") %></p>
         <div class="footer-social-icons">
-          <a href="https://github.com/blockscout/blockscout" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+          <a href="https://github.com/hschain" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
             <div class="footer-social-icon-container fontawesome-icon github"></div>
           </a>
-          <a href="https://www.twitter.com/blockscoutcom/" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>
-            <div class="footer-social-icon-container fontawesome-icon twitter"></div>
-          </a>
-          <a href="https://t.me/poa_network" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Telegram") %>'>
-            <div class="footer-social-icon-container fontawesome-icon telegram"></div>
-          </a>
+          <!-- 
+            <a href="https://www.twitter.com/blockscoutcom/" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>
+              <div class="footer-social-icon-container fontawesome-icon twitter"></div>
+            </a>
+            <a href="https://t.me/poa_network" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Telegram") %>'>
+              <div class="footer-social-icon-container fontawesome-icon telegram"></div>
+            </a>
+          --> 
         </div>
       </div>
 
-      <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
+      <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list" style="display:none;">
         <h3>BlockScout</h3>
         <ul>
           <li><a href="<%= issue_link(@conn) %>" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("Submit an Issue") %></a></li>
@@ -43,7 +45,7 @@
         </ul>
       </div>
       <% main_nets = main_nets(other_networks()) %>
-
+    <!--
       <%= unless Enum.empty?(main_nets) do %>
         <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
           <h3><%= gettext("Main Networks") %></h3>
@@ -53,10 +55,10 @@
             <% end %>
           </ul>
         </div>
-      <% end %>
+      <% end %> -->
 
       <% test_nets = test_nets(other_networks()) %>
-
+      <!--
       <%= unless Enum.empty?(test_nets) do %>
         <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
           <h3><%= gettext("Test Networks") %></h3>
@@ -77,7 +79,7 @@
             <% end %>
           </ul>
         </div>
-      <% end %>
+      <% end %> -->
     </div>
 
     <% version = version() %>
@@ -85,7 +87,7 @@
     <%= unless ignore_version?(version) do %>
       <% release_link = release_link(version) %>
       <div>
-        <%= gettext("Version") %>: <%= release_link %>
+        <%= gettext("HSChain © 2022") %> <%= release_link %>
       </div>
     <% end %>
   </div>

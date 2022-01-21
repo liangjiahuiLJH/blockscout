@@ -5,7 +5,7 @@ defmodule Explorer.ExchangeRates.Token do
 
   @typedoc """
   Represents an exchange rate for a given token.
-
+  
    * `:available_supply` - Available supply of a token
    * `:total_supply` - Max Supply
    * `:btc_value` - The Bitcoin value of the currency

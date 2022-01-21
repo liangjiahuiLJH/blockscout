@@ -80,6 +80,7 @@ $dark-stakes-banned-background: #3e314c;
 	// footer
 	.footer {
 		background: $dark-light-bg;
+		background-image: url("/images/abstract-shapes-20.svg");
 		color: $labels-dark;
 	}
 	.footer-social-icon,
@@ -97,7 +98,7 @@ $dark-stakes-banned-background: #3e314c;
 	// hero stats
 
 	.layout-container .dashboard-banner-container {
-		background-image: none;
+		// background-image: none;
 		background-color: $dark-bg;
 	}
 	.dashboard-banner-network-plain-container,

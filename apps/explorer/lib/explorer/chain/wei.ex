@@ -2,22 +2,22 @@ defmodule Explorer.Chain.Wei do
   @moduledoc """
   The smallest fractional unit of Ether. Using wei instead of ether allows code to do integer match instead of using
   floats.
-
+  
   All values represented by the `Wei` struct are assumed to measured in the base unit of wei.
   See [Ethereum Homestead Documentation](http://ethdocs.org/en/latest/ether.html) for examples of various denominations of wei.
-
+  
   Etymology of "wei" comes from [Wei Dai (戴維)](https://en.wikipedia.org/wiki/Wei_Dai), a
   [cypherpunk](https://en.wikipedia.org/wiki/Cypherpunk) who came up with b-money, which outlined modern
   cryptocurrencies.
-
+  
   ## Interfacing With Ecto
-
+  
   You can define a field in a schema to be of type Wei for convenience when dealing with Wei values.
-
+  
       schema "my_schema" do
         field :gas, Explorer.Chain.Wei
       end
-
+  
   """
 
   alias Explorer.Chain.Wei
@@ -87,14 +87,14 @@ defmodule Explorer.Chain.Wei do
 
   @typedoc """
   Ether is the default unit Ethereum and its side chains are measured in when displaying values to humans.
-
+  
   10<sup>18</sup> wei is 1 ether.
   """
   @type ether :: Decimal.t()
 
   @typedoc """
   Short for giga-wei
-
+  
   10<sup>9</sup> wei is 1 gwei.
   """
   @type gwei :: Decimal.t()
@@ -130,9 +130,9 @@ defmodule Explorer.Chain.Wei do
 
   @doc """
   Sums two Wei values.
-
+  
   ## Example
-
+  
       iex> first = %Explorer.Chain.Wei{value: Decimal.new(123)}
       iex> second = %Explorer.Chain.Wei{value: Decimal.new(1_000)}
       iex> Explorer.Chain.Wei.sum(first, second)
@@ -147,9 +147,9 @@ defmodule Explorer.Chain.Wei do
 
   @doc """
   Subtracts two Wei values.
-
+  
   ## Example
-
+  
       iex> first = %Explorer.Chain.Wei{value: Decimal.new(1_123)}
       iex> second = %Explorer.Chain.Wei{value: Decimal.new(1_000)}
       iex> Explorer.Chain.Wei.sub(first, second)
@@ -163,9 +163,9 @@ defmodule Explorer.Chain.Wei do
 
   @doc """
   Multiplies Wei values by an `t:integer/0`.
-
+  
   ## Example
-
+  
       iex> wei = %Explorer.Chain.Wei{value: Decimal.new(10)}
       iex> multiplier = 5
       iex> Explorer.Chain.Wei.mult(wei, multiplier)
@@ -186,24 +186,24 @@ defmodule Explorer.Chain.Wei do
   @doc """
   Converts `Decimal` representations of various wei denominations (wei, Gwei, ether) to
   a wei base unit.
-
+  
   ## Examples
-
+  
   Convert wei to itself.
-
+  
       iex> Explorer.Chain.Wei.from(Decimal.new(1), :wei)
       %Explorer.Chain.Wei{value: Decimal.new(1)}
-
+  
   Convert `t:gwei/0` to wei.
-
+  
       iex> Explorer.Chain.Wei.from(Decimal.new(1), :gwei)
       %Explorer.Chain.Wei{value: Decimal.new(1_000_000_000)}
-
+  
   Convert `t:ether/0` to wei.
-
+  
       iex> Explorer.Chain.Wei.from(Decimal.new(1), :ether)
       %Explorer.Chain.Wei{value: Decimal.new(1_000_000_000_000_000_000)}
-
+  
   """
 
   @spec from(ether(), :ether) :: t()
@@ -223,28 +223,28 @@ defmodule Explorer.Chain.Wei do
 
   @doc """
   Converts a `Wei` value to another denomination of wei represented in `Decimal`.
-
+  
   ## Examples
-
+  
   Convert wei to itself.
-
+  
       iex> Explorer.Chain.Wei.to(%Explorer.Chain.Wei{value: Decimal.new(1)}, :wei)
       Decimal.new(1)
-
+  
   Convert wei to `t:gwei/0`.
-
+  
       iex> Explorer.Chain.Wei.to(%Explorer.Chain.Wei{value: Decimal.new(1)}, :gwei)
       Decimal.new("1e-9")
       iex> Explorer.Chain.Wei.to(%Explorer.Chain.Wei{value: Decimal.new("1e9")}, :gwei)
       Decimal.new(1)
-
+  
   Convert wei to `t:ether/0`.
-
+  
       iex> Explorer.Chain.Wei.to(%Explorer.Chain.Wei{value: Decimal.new(1)}, :ether)
       Decimal.new("1e-18")
       iex> Explorer.Chain.Wei.to(%Explorer.Chain.Wei{value: Decimal.new("1e18")}, :ether)
       Decimal.new(1)
-
+  
   """
 
   @spec to(t(), :ether) :: ether()
