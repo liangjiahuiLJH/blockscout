@@ -1505,6 +1505,7 @@ Reverting of synchronous block counter, implemented in #1848
 ### Fixes
 
 ### Chore
+- [#5119](https://github.com/blockscout/blockscout/pull/5119) - Inventory controller refactoring
 - [#5118](https://github.com/blockscout/blockscout/pull/5118) - Fix top navigation template
 
 
