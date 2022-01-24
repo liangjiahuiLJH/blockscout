@@ -44,3 +44,9 @@ You can also run IEx (Interactive Elixir): `$ iex -S mix phx.server` (This can b
 The app is currently internationalized. It is only localized to U.S. English.
 
 To translate new strings, run `$ mix gettext.extract --merge` and edit the new strings in `priv/gettext/en/LC_MESSAGES/default.po`.
+
+### ENV Variables config
+
+export LOGO=/images/brand_logo.svg
+export NETWORK=
+export SUBNETWORK=HSChain
