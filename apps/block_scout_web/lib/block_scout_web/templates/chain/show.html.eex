@@ -199,7 +199,7 @@
           </form>
         </div>
       </div>
-      <div class="col-12 col-lg-5">
+      <div class="col-12 col-lg-5" style="display: none;">
         <div class="d-none d-lg-block text-center pl-lg-4 pl-xll-5">
           <a class="d-inline-block d-sm-none position-relative text-dark" target="_blank" href="https://goto.bscscan.com/rd/1HXVUN3RRUBGYG2ZXXWJFEKG1">
           <span class="showcase-banner-text bg-white font-size-1 shadow rounded px-1" style="left: 1rem;">Ad</span><img class="img-fluid rounded" src="/images/bybit_sidus_321x101.png" alt="Ads"></a>
