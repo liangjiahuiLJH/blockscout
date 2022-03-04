@@ -227,7 +227,7 @@
               <div class="media-body">
                 <h2 class="font-size-1 text-uppercase text-secondary mb-0"><%= gettext "Total blocks" %></h2>
                 <a href="/blocks" class="text-size-1 text-link" rel="tooltip" data-toggle="tooltip" data-placement="bottom" data-html="true" title="" data-original-title="View All Blocks">
-                  <span>
+                  <span data-selector="block-count">
                     <%= BlockScoutWeb.Cldr.Number.to_string!(@block_count, format: "#,###") %>
                   </span>
                 </a>
