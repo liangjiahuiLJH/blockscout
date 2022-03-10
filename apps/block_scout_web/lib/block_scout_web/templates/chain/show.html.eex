@@ -172,7 +172,7 @@
       <!-- 搜索框 -->
       <div class="col-md-12 col-lg-7">
         <div class="pr-lg-4 pr-xll-5">
-          <h1 class="h4 text-white mb-3">The HSC BlockChain Explorer</h1>
+          <h1 class="h4 text-white mb-3">The HSC SmartChain Explorer</h1>
           <form class="mb-3" action="/search" method="GET">
             <div class="input-group input-group-shadow">
               <div class="input-group-prepend d-none d-md-block">
