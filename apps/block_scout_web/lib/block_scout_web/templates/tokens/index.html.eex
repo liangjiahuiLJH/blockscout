@@ -21,9 +21,9 @@
 	<table>
 	  <thead>
 	    <tr>
-	      <th class="stakes-table-th">
+	      <!-- <th class="stakes-table-th">
 			<div class="stakes-table-th-content">&nbsp;</div>
-	      </th>
+	      </th> -->
 		  <th class="stakes-table-th">
 			<div>&nbsp;</div>
 		  </th>
