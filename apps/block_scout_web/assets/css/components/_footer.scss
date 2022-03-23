@@ -120,3 +120,7 @@ $footer-logo-width: auto !default;
 .footer-brand {
   text-decoration: none !important;
 }
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}

@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import { addChainToMM } from '../lib/add_chain_to_mm'
 
 $(document).click(function (event) {
   const clickover = $(event.target)
@@ -18,6 +19,9 @@ $(document).on('keyup', function (event) {
   if (event.key === '/') {
     $('.main-search-autocomplete').trigger('focus')
   }
+}).on('click', '.js-btn-add-chain-to-mm', event => {
+  const $btn = $(event.target)
+  addChainToMM({ btn: $btn })
 })
 
 $('.main-search-autocomplete').on('keyup', function (event) {
