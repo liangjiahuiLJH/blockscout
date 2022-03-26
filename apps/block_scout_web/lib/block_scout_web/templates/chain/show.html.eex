@@ -258,8 +258,9 @@
                 <h2 class="font-size-1 text-uppercase text-secondary mb-0"><%= gettext "Total transactions" %></h2>
                 <a href="/txs" class="text-size-1 text-link" rel="tooltip" data-toggle="tooltip" data-placement="bottom" data-html="true" title="" data-original-title="View All Blocks">
                   <div class="d-flex">
-                    <span id="countUpTxCount" class="d-none" data-selector="transaction-count"><%= BlockScoutWeb.Cldr.Number.to_string!(@transaction_estimated_count, format: "#,###") %></span>
-                    <span id="countUpTxCountDisplay"><%= BlockScoutWeb.Cldr.Number.to_string!(@transaction_estimated_count, format: "#,###") %></span>
+                    <span data-selector="transaction-count">
+                      <!-- <%= BlockScoutWeb.Cldr.Number.to_string!(@transaction_estimated_count, format: "#,###") %> -->
+                    </span>
                     <%= if @total_gas_usage > 0 do %>
                       <span
                         data-toggle="tooltip"
