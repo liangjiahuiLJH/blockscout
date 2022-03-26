@@ -25,7 +25,7 @@
             <div class="footer-social-icon-container fontawesome-icon github"></div>
           </a>
           <%= if System.get_env("COIN_NAME") && System.get_env("NETWORK_PATH") && System.get_env("SUBNETWORK") && System.get_env("JSON_RPC") && System.get_env("CHAIN_ID") do %>
-            <li><a class="footer-link js-btn-add-chain-to-mm btn-add-chain-to-mm in-footer" style="cursor: pointer;"><%= gettext("Add") <> " #{System.get_env("SUBNETWORK")} " <> gettext("to MetaMask") %></a></li>
+            <a class="footer-link js-btn-add-chain-to-mm btn-add-chain-to-mm in-footer" style="cursor: pointer;"><%= gettext("Add") <> " #{System.get_env("SUBNETWORK")} " <> gettext("to MetaMask") %></a>
           <% end %>
           <!-- 
             <a href="https://www.twitter.com/blockscoutcom/" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>

@@ -241,7 +241,7 @@
               <div class="media-body">
                 <h2 class="font-size-1 text-uppercase text-secondary mb-0"><%= gettext "Wallet addresses" %></h2>
                 <a href="/accounts" class="text-size-1 text-link" rel="tooltip" data-toggle="tooltip" data-placement="bottom" data-html="true" title="" data-original-title="View All Blocks">
-                  <span>
+                  <span data-selector="address-count">
                     <%= BlockScoutWeb.Cldr.Number.to_string!(@address_count, format: "#,###") %>
                   </span>
                 </a> 
@@ -257,9 +257,22 @@
               <div class="media-body">
                 <h2 class="font-size-1 text-uppercase text-secondary mb-0"><%= gettext "Total transactions" %></h2>
                 <a href="/txs" class="text-size-1 text-link" rel="tooltip" data-toggle="tooltip" data-placement="bottom" data-html="true" title="" data-original-title="View All Blocks">
-                  <span>
-                    <%= BlockScoutWeb.Cldr.Number.to_string!(@transaction_estimated_count, format: "#,###") %>
-                  </span>
+                  <div class="d-flex">
+                    <span data-selector="transaction-count">
+                      <%= BlockScoutWeb.Cldr.Number.to_string!(@transaction_estimated_count, format: "#,###") %>
+                    </span>
+                    <%= if @total_gas_usage > 0 do %>
+                      <span
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        data-html="true"
+                        data-template="<div class='tooltip tooltip-inversed-color tooltip-gas-usage' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'></div></div>"
+                        title="<div class='custom-tooltip-header'>Total gas used</div><div class='custom-tooltip-description'><b><%= BlockScoutWeb.Cldr.Number.to_string!(@total_gas_usage, format: "#,###") %><b></div>"
+                        class="custom-tooltip-total-transactions">
+                        <i style="color: #ffffff;" class="fa fa-info-circle ml-2"></i>
+                      </span>
+                    <% end %>
+                  </div>
                 </a>
               </div>
             </div>
